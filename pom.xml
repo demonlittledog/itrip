@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.itrip</groupId>
+    <artifactId>itrip-backend</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>itrip-beans</module>
+        <module>itrip-utils</module>
+        <module>itrip-dao</module>
+        <module>itrip-trade</module>
+        <module>itrip-auth</module>
+        <module>itrip-biz</module>
+        <module>itrip-search</module>
+    </modules>
+<dependencies>
+    <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.11</version>
+</dependency>
+</dependencies>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>test release</name>
+            <url>http://192.168.80.131:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>test snap reles</name>
+            <url>http://192.168.80.131:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>nexus public</name>
+            <url>http://192.168.80.131:8081/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <!-- 快照版本一般选false，除非需要看到其他人的版本 -->
+            </snapshots>
+        </repository>
+    </repositories>
+    <!-- BOM清单 -->
+    <!-- 在pom里使用maven一定要指定版本号，除非使用bom机制 -->
+</project>
